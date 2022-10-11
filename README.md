@@ -1,6 +1,4 @@
 # wix
-
-# wix
 ## install caution:
 ### 1.for windows branch:
 #### enter C_space\
