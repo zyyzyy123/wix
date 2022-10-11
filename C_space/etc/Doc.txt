@@ -1,0 +1,6 @@
+EXC_in|Do|EXC_Out|EXCp_Out|Pattern	(本行为注释行没有效果,*表示不修改默认,修改时注意格式)
+|Y|start /max explorer|*|cmd
+:0|N|*|*|*
+vim|N|*|*|*
+:r|Y|dir|*|cmd
+:vc|Y|"D:\Program Files (x86)\VScode\Microsoft VS Code\bin\code.cmd"|*|process

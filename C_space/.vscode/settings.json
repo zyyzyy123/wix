@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.vue": "html",
+        "wix_program.h": "c",
+        "stdio.h": "c",
+        "direct.h": "c",
+        "windows.h": "c",
+        "stdlib.h": "c",
+        "iostream": "cpp"
+    }
+}
