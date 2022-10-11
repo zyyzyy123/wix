@@ -1,0 +1,55 @@
+			EXC_In(执行器简写名)                           	默认
+xdg-open	EXC_Out(执行器译名，不能为空串，*默认)
+		EXCp_Out(执行器参数 )
+0		EXCp_Out_num(执行器参数个数,-1时默认,0无,或>0)
+1		Do(0 否,1 是)
+1		Pattern(0 命令行,1 独立进程)
+—————————————————————————————————————————————————————————————	vim
+:v		EXC_In
+vim		EXC_Out
+*		EXCp_Out
+-1		EXCp_Out_num
+1		Do
+0		Pattern
+—————————————————————————————————————————————————————————————	vscode
+code	EXC_In
+*		EXC_Out
+*		EXCp_Out
+-1		EXCp_Out_num
+1		Do
+0		Pattern
+—————————————————————————————————————————————————————————————	记事本
+:n		EXC_In
+subl		EXC_Out
+		EXCp_Out
+0		EXCp_Out_num
+1		Do
+1		Pattern
+—————————————————————————————————————————————————————————————	nano
+nano	EXC_In
+*		EXC_Out
+*		EXCp_Out
+-1		EXCp_Out_num
+1		Do
+0		Pattern
+—————————————————————————————————————————————————————————————	只读
+:r		EXC_In
+cat		EXC_Out
+		EXCp_Out
+0		EXCp_Out_num
+1		Do
+0		Pattern
+—————————————————————————————————————————————————————————————	libreoffice
+:lb		EXC_In
+libreoffice7.4		EXC_Out
+		EXCp_Out
+0		EXCp_Out_num
+1		Do
+1		Pattern
+—————————————————————————————————————————————————————————————	不执行
+:0		EXC_In
+		EXC_Out
+		EXCp_Out
+		EXCp_Out_num
+0		Do
+		Pattern

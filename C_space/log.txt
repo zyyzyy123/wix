@@ -1,0 +1,25 @@
+设计:
+[0(不存在),1(文件),2(目录)]	Dir_Simple target_path
+[无]				Open target_path Lei[0(不存在),1(文件),2(目录)] EXC EXCp[1..n]
+[0(失败),1(成功)]		New target_path Lei[0(auto),1(强制文件),2(强制目录)] 
+
+1.写库 完成
+check_dir 完成
+CreateFL 完成
+CreateDoc 完成
+CommandLine 完成
+
+2.运行程序 完成
+Dir_Simple 完成
+New 完成
+Open 完成
+
+3.配置文件 完成
+
+4.shell 完成 （:c 功能没有实现）
+写wix(linux shell 文件) 完成
+配置环境变量 完成
+
+(5).有必要的话写个安装包
+
+进度: 大致完成

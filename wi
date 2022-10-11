@@ -1,0 +1,75 @@
+#!/bin/bash
+
+#===============================================================================初始化
+#arg1 target
+#arg2 EXC
+arg0=$0
+arg1=$1
+arg2=$2
+
+Self=${BASH_SOURCE[0]}
+DIR=$(dirname "${Self}")
+Base=$(basename "${Self}")
+
+#Self="/home/zyy/我的程序/Bat/wi"
+#DIR="/home/zyy/我的程序/Bat"
+#Base="wi"
+
+HelpDoc="${DIR}/help/${Base}.txt"
+EtcDoc="${DIR}/C_space/etc/Doc.txt"
+EtcFile="${DIR}/C_space/etc/File.txt"
+
+arg_test="${DIR}/C_space/test/arg_test"
+Dir_Simple="${DIR}/C_space/bin/Dir_Simple"
+Open="${DIR}/C_space/bin/Open"
+New="${DIR}/C_space/bin/New"
+
+#======================================shell=========================================
+if [ "$arg1" = "" ] || [ "$arg1" = "--help" ];then
+	$Open "$HelpDoc" 1 ":r"
+elif [ "$arg1" = "///" ];then
+	$Open "$arg0" 1 ":n"
+elif [ "$arg1" = "///h" ];then
+	$Open "$HelpDoc" 1 ":n"
+elif [ "$arg1" = "///f" ];then
+	$Open "$EtcFile" 1 ":n"
+elif [ "$arg1" = "///d" ];then
+	$Open "$EtcDoc" 1 ":n"
+else
+
+#===================================main=========================================
+	#=======查询路径=======
+	$Dir_Simple "$arg1"
+	X1=$?
+	#=========创建=========
+	if [ "$X1" = 0 ]; then
+		#==========:r=====
+		if [ "$arg2" = ":r" ];then :
+			# nothing to do
+		#==========默认====
+		else
+			$New "$arg1" $X1
+			$Dir_Simple "$arg1"
+			X1=$?
+		fi
+	fi
+	#=========打开=========
+	if [ "$X1" = 0 ];then
+		echo "路径名不合法 或者 权限不够"
+	else
+		#=======:c===========
+		if [ "$arg2" = ":c" ];then
+			if [ "$X1" = 1 ];then
+				arg1=$(dirname "$arg1")
+			fi
+			cd "$arg1"
+		#==========默认====
+		else
+			$Open "$arg1" $X1 "$arg2" "${@:3}"
+		fi
+	fi
+
+#===============================================================================shell
+	#	nothing to do
+fi
+
